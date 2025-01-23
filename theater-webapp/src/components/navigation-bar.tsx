@@ -19,7 +19,7 @@ const NavigationBar: React.FC = () => {
 			<div className="container">
 				<nav className="hiddn justify-between lg:flex">
 					<div className="flex items-center gap-6">
-						<div className="flex items-center gap-2">
+						<div className="flex items-center gap-2 whitespace-nowrap">
 							<span className="text-xl font-semibold ml-8">Theater App</span>
 						</div>
 						<div className="flex items-center">
