@@ -1,8 +1,9 @@
+import NavigationBar from "@/components/navigation-bar";
 import React, {useEffect, useState} from "react";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="flex justify-center">
       <h1>
         Hello World!
       </h1>
