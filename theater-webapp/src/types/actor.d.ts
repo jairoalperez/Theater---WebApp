@@ -3,6 +3,7 @@ export interface Actor {
     firstName?: string;
     lastName?: string;
     dob?: string;
+    age?: number;
     gender?: string;
     skinColor?: string;
     eyeColor?: string;
