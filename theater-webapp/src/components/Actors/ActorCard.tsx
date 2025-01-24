@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { AspectRatio } from "../ui/aspect-ratio"
 import { LoaderPinwheelIcon } from "../ui/loader-pinwheel"
+import { UserIcon } from "../ui/user"
 
 interface ActorCardProps {
 	actor: ActorShort
@@ -20,7 +21,7 @@ const ActorCard: React.FC<ActorCardProps> = ({ actor }) => {
 				className="h-56 w-full object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
 				src={actor.frontImage}
 				alt='image'
-			/> : <div className="h-56 w-full bg-muted object-cover object-end flex items-center justify-center"> <LoaderPinwheelIcon isAnimating={true} /> </div>}
+			/> : <div className="h-56 w-full bg-muted object-cover object-end flex items-center justify-center"> <UserIcon /> </div>}
 			<div className="p-6">
 				<div className="flex items-baseline">
 					<span
