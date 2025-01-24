@@ -2,9 +2,10 @@
 
 import type { Variants, Transition } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import React from 'react';
 
 const gVariants: Variants = {
-  normal: { rotate: 0 }, // if you want to start from a different angle, change this value or remove it entirely
+  normal: { rotate: 0 },
   animate: {
     rotate: 360,
     transition: {
@@ -21,15 +22,20 @@ const defaultTransition: Transition = {
   damping: 10,
 };
 
-const LoaderPinwheelIcon = () => {
+const LoaderPinwheelIcon = ({ isAnimating }: { isAnimating?: boolean }) => {
   const controls = useAnimation();
 
+  // Si isAnimating es verdadero, la animación comienza automáticamente
+  React.useEffect(() => {
+    if (isAnimating) {
+      controls.start('animate');
+    } else {
+      controls.start('normal');
+    }
+  }, [isAnimating, controls]);
+
   return (
-    <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
-    >
+    <div className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"
