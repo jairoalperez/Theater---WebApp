@@ -1,3 +1,5 @@
+import { actorCharacter } from "./actorCharacter";
+
 export interface Actor {
     actorId?: number;
     firstName?: string;
@@ -10,4 +12,5 @@ export interface Actor {
     hairColor?: string;
     frontImage?: string;
     fullBodyImage?: string;
+    characters?: actorCharacter[];
 }

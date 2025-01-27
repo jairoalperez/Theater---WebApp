@@ -10,17 +10,26 @@ interface ActorCharacterCardProps {
 
 const ActorCharacterCard: React.FC<ActorCharacterCardProps> = ({ character }) => {
 	return (
-		<article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
-			<img
-				src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
-				alt="University of Southern California"
-				className="absolute inset-0 h-full w-full object-cover"
-			/>
-			<div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-			<h3 className="z-10 mt-3 text-3xl font-bold text-white">Character</h3>
-			<div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-				Play Title
+		<div className="group w-[280px] h-[280px] relative isolate flex flex-col justify-end overflow-hidden bg-card hover:bg-primary text-foreground border border-border rounded-lg overflow-hidden shadow-2xl transition duration-300 ease-in-out cursor-pointer">
+			{character.image ? (
+				<img
+					src="actor.frontImage"
+					alt="image"
+					className="h-full w-full object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
+				/>
+			) : (
+				<div className="h-full w-full bg-muted object-cover object-end flex items-center justify-center">
+					{" "}
+					<UserIcon />{" "}
+				</div>
+			)}
+			{character.principal ? <div className="absolute top-4 right-4 bg-orange-300 text-orange-800 inline-block py-1 px-4 text-xs rounded-full uppercase font-bold tracking-wide group-hover:bg-card group-hover:text-foreground transition duration-300 ease-in-out">Principal</div> : <div></div>}
+			<div className="absolute bottom-4 left-4 text-white">
+				<h2 className="text-md font-bold">{character.name}</h2>
+				<p className="text-xs">{character.playTitle} - {character.playFormat}</p>
 			</div>
-		</article>
+		</div>
 	)
 }
+
+export default ActorCharacterCard
