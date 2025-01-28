@@ -1,5 +1,5 @@
-import { CharacterActor } from "./characterActor.t";
-import { CharacterPlay } from "./characterPlay.t";
+import { CharacterActor } from "./characterActor";
+import { CharacterPlay } from "./characterPlay";
 
 export interface Character {
     characterId?: number;
