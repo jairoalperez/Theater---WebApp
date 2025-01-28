@@ -11,22 +11,6 @@ import ActorProfile from "@/components/Actors/ActorProfile"
 import Link from "next/link"
 import ActorCharacterCard from "@/components/Characters/ActorCharacterCard"
 
-const actorSample: Actor = {
-	actorId: 1,
-	firstName: "Valeria",
-	lastName: "Urdaneta",
-	dob: "1990-01-01",
-	age: 33,
-	gender: "Male",
-	skinColor: "Light Brown",
-	eyeColor: "Light Brown",
-	hairColor: "Light Blonde",
-	frontImage:
-		"https://images.unsplash.com/photo-1570797197190-8e003a00c846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80",
-	fullBodyImage:
-		"https://images.unsplash.com/photo-1570797197190-8e003a00c846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80",
-}
-
 const ActorPage: React.FC = () => {
 	const params = useParams()
 	const id = params?.id
@@ -78,29 +62,27 @@ const ActorPage: React.FC = () => {
 		</div>
 	) : (
 		<div>
-		<div className="flex justify-center">
-			<div className={cn("mx-auto flex flex-col items-center p-4")}>
-					<div className="gap-4 p-4">
-						{actor && <ActorProfile actor={actor} />}
-					</div>
-			</div>
-		</div>
-		<div className="flex justify-center">
-			<div className={cn("mx-auto flex flex-col items-center p-4")}>
-				<h1 className="text-4xl font-bold mx-auto mb-8 mt-8 text-foreground">Characters</h1>
-				<div
-					className={cn(
-						"grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-4"
-					)}
-				>
-					{actor?.characters?.map((character) => (
-						<Link key={character.characterId} href={`/characters/${character.characterId}`}>
-							<ActorCharacterCard character={character} />
-						</Link>
-					))}
+			<div className="flex justify-center">
+				<div className={cn("mx-auto flex flex-col items-center p-4")}>
+					<div className="gap-4 p-4">{actor && <ActorProfile actor={actor} />}</div>
 				</div>
 			</div>
-		</div>
+			<div className="flex justify-center">
+				<div className={cn("mx-auto flex flex-col items-center p-4")}>
+					<h1 className="text-4xl font-bold mx-auto mb-8 mt-8 text-foreground">Characters</h1>
+					<div
+						className={cn(
+							"grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-4"
+						)}
+					>
+						{actor?.characters?.map((character) => (
+							<Link key={character.characterId} href={`/characters/${character.characterId}`}>
+								<ActorCharacterCard character={character} />
+							</Link>
+						))}
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
