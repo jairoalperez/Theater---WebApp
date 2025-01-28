@@ -5,6 +5,7 @@ import { UserIcon } from "../ui/user"
 import { Character } from "@/types/character"
 import { Card, CardHeader, CardTitle } from "../ui/card"
 import { cn } from "@/lib/utils"
+import { ActivityIcon } from "../ui/activity"
 
 interface CharacterProfileProps {
 	character: Character
@@ -70,9 +71,25 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({ character }) => {
 							</div>
 						)}
 						<div className="absolute bottom-4 text-white text-center w-full">
-							<p className="text-lg font-semibold white-space text-nowrap">{character.actor?.firstName} {character.actor?.lastName}</p>
+							<p className="text-lg font-semibold white-space text-nowrap">
+								{character.actor?.firstName} {character.actor?.lastName}
+							</p>
 						</div>
 					</div>
+				</div>
+				<div className="w-[280px] text-center items-center justify-center">
+					{character.play?.poster ? (
+						<img
+							className="h-[415px] w-[280px] rounded-lg object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
+							src={character.play?.poster}
+							alt="image"
+						/>
+					) : (
+						<div className="h-[415px] w-[280px] rounded-lg bg-muted object-cover object-end flex items-center justify-center">
+							{" "}
+							<ActivityIcon />{" "}
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
