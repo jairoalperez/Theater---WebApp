@@ -35,8 +35,8 @@ const PlaysList: React.FC = () => {
 	}, [])
 
 	return (
-		<div className="flex justify-center">
-			<div className={cn("mx-auto flex flex-col items-center p-4")}>
+		<div className="flex justify-center pb-16">
+			<div className={cn("mx-auto flex flex-col items-center")}>
 				<h1 className="text-4xl font-bold mx-auto mb-8 mt-8 text-foreground">Plays</h1>
 				{loading ? (
 					<div className="h-56 w-full object-cover object-end flex items-center justify-center">
@@ -49,7 +49,7 @@ const PlaysList: React.FC = () => {
 				) : (
 					<div
 						className={cn(
-							"grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-4"
+							"grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
 						)}
 					>
 						{plays.map((play) => (

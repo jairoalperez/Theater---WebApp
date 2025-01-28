@@ -60,8 +60,8 @@ const CharacterPage: React.FC = () => {
 		</div>
 	) : (
 		<div>
-			<div className="flex justify-center">
-				<div className="mx-auto flex flex-col items-center p-4">
+			<div className="flex justify-center pb-16">
+				<div className="mx-auto flex flex-col items-center">
                     {character && <CharacterProfile character={character} />}
                 </div>
 			</div>

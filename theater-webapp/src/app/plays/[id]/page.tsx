@@ -8,6 +8,7 @@ import { Play } from "@/types/play"
 import { LoaderPinwheelIcon } from "@/components/ui/loader-pinwheel"
 import { Sleep } from "@/helpers/sleep"
 import Link from "next/link"
+import PlayProfile from "@/components/Plays/PlayProfile"
 
 const PlayPage: React.FC = () => {
 	const params = useParams()
@@ -43,8 +44,8 @@ const PlayPage: React.FC = () => {
 	}, [id])
 
 	return (
-		<div className="flex justify-center">
-			<div className={cn("mx-auto flex flex-col items-center p-4")}>
+		<div className="flex justify-center pb-16">
+			<div className={cn("mx-auto flex flex-col items-center")}>
 				{loading ? (
 					<div className="h-56 w-full object-cover object-end flex items-center justify-center">
 						<LoaderPinwheelIcon isAnimating={true} />
@@ -54,7 +55,7 @@ const PlayPage: React.FC = () => {
 						<div className="text-foreground">{error}</div>
 					</div>
 				) : (
-					<div>{play?.title}</div>
+					<div className="gap-4">{play && <PlayProfile play={play}/>}</div>
 				)}
 			</div>
 		</div>

@@ -51,7 +51,7 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({ character }) => {
 				<div className="w-[280px] text-foreground bg-card text-center shadow-2xl border border-border rounded-lg p-4 flex flex-col items-center justify-center">
 					<div className="mt-2">
 						<p className="text-lg font-semibold white-space text-nowrap">{character.name}</p>
-						<p className="text-sm ml-2 text-gray-500 mb-4">({character.age} YEARS)</p>
+						<p className="text-sm text-gray-500 mb-4">({character.age} YEARS)</p>
 					</div>
 					<p>{character.description}</p>
 				</div>

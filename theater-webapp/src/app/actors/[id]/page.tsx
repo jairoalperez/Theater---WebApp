@@ -61,14 +61,14 @@ const ActorPage: React.FC = () => {
 			</div>
 		</div>
 	) : (
-		<div>
+		<div className="pb-16">
 			<div className="flex justify-center">
-				<div className={cn("mx-auto flex flex-col items-center p-4")}>
-					<div className="gap-4 p-4">{actor && <ActorProfile actor={actor} />}</div>
+				<div className={cn("mx-auto flex flex-col items-center")}>
+					<div className="gap-4">{actor && <ActorProfile actor={actor} />}</div>
 				</div>
 			</div>
 			<div className="flex justify-center">
-				<div className={cn("mx-auto flex flex-col items-center p-4")}>
+				<div className={cn("mx-auto flex flex-col items-center")}>
 					<h1 className="text-4xl font-bold mx-auto mb-8 mt-8 text-foreground">Characters</h1>
 					<div
 						className={cn(
