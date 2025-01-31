@@ -57,8 +57,8 @@ const ActorsList: React.FC = () => {
 			</div>
 		</div>
 	) : (
-		<div className="flex justify-center">
-			<div className={cn("mx-auto flex flex-col items-center p-4")}>
+		<div className="flex justify-center pb-16">
+			<div className={cn("mx-auto flex flex-col items-center")}>
 				<h1 className="text-4xl font-bold mx-auto mb-8 mt-8 text-foreground">Actors</h1>
 				<div
 					className={cn(
