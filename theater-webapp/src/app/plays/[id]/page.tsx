@@ -67,7 +67,7 @@ const PlayPage: React.FC = () => {
 									)}
 								>
 									{play?.characters?.map((character) => (
-										<Link key={character.characterId} href={`/characters/${character.characterId}`}>
+										<Link key={character?.characterId} href={`/characters/${character?.characterId}`}>
 											<PlayCharacterCard character={character} />
 										</Link>
 									))}

@@ -11,7 +11,7 @@ interface ActorCharacterCardProps {
 const ActorCharacterCard: React.FC<ActorCharacterCardProps> = ({ character }) => {
 	return (
 		<div className="group w-[280px] h-[280px] relative isolate flex flex-col justify-end overflow-hidden bg-card hover:bg-primary text-foreground border border-border rounded-lg overflow-hidden shadow-2xl transition duration-300 ease-in-out cursor-pointer">
-			{character.image ? (
+			{character?.image ? (
 				<img
 					src="actor.frontImage"
 					alt="image"
@@ -23,10 +23,10 @@ const ActorCharacterCard: React.FC<ActorCharacterCardProps> = ({ character }) =>
 					<UserIcon />{" "}
 				</div>
 			)}
-			{character.principal ? <div className="absolute top-4 right-4 bg-orange-300 text-orange-800 inline-block py-1 px-4 text-xs rounded-full uppercase font-bold tracking-wide group-hover:bg-card group-hover:text-foreground transition duration-300 ease-in-out">Principal</div> : <div></div>}
+			{character?.principal ? <div className="absolute top-4 right-4 bg-orange-300 text-orange-800 inline-block py-1 px-4 text-xs rounded-full uppercase font-bold tracking-wide group-hover:bg-card group-hover:text-foreground transition duration-300 ease-in-out">Principal</div> : <div></div>}
 			<div className="absolute bottom-4 left-4 text-white">
-				<h2 className="text-md font-bold">{character.name}</h2>
-				<p className="text-xs">{character.playTitle} - {character.playFormat}</p>
+				<h2 className="text-md font-bold">{character?.name}</h2>
+				<p className="text-xs">{character?.playTitle} - {character?.playFormat}</p>
 			</div>
 		</div>
 	)

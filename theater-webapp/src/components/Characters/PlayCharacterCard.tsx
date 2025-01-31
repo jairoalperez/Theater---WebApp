@@ -13,10 +13,10 @@ const PlayCharacterCard: React.FC<PlayCharacterProps> = ({ character }) => {
 		<div className="relative group w-[280px] l-[280px] bg-card hover:bg-primary text-foreground border border-border rounded-lg overflow-hidden shadow-2xl transition duration-300 ease-in-out cursor-pointer">
 			<div className="grid grid-cols-2">
 				<div>
-					{character.image ? (
+					{character?.image ? (
 						<img
 							className="h-[140px] w-[140px] object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
-							src={character.image}
+							src={character?.image}
 							alt="image"
 						/>
 					) : (
@@ -27,10 +27,10 @@ const PlayCharacterCard: React.FC<PlayCharacterProps> = ({ character }) => {
 					)}
 				</div>
 				<div>
-					{character.actor.frontImage ? (
+					{character?.actor?.frontImage ? (
 						<img
 							className="h-[140px] w-[140px] object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
-							src={character.actor.frontImage}
+							src={character?.actor?.frontImage}
 							alt="image"
 						/>
 					) : (
@@ -42,10 +42,10 @@ const PlayCharacterCard: React.FC<PlayCharacterProps> = ({ character }) => {
 				</div>
 			</div>
             <div className="w-[280px] l-[140px] text-left">
-                <p className="ml-4 mb-1 mt-4 font-semibold text-lg leading-tight truncate">{character.name}</p>
-                <p className="ml-4 mb-4 text-gray-400 text-sm tracking-wide">{character.actor.firstName} {character.actor.lastName}</p>
+                <p className="ml-4 mb-1 mt-4 font-semibold text-lg leading-tight truncate">{character?.name}</p>
+                <p className="ml-4 mb-4 text-gray-400 text-sm tracking-wide">{character?.actor?.firstName} {character?.actor?.lastName}</p>
             </div>
-            {character.principal ? <div className="absolute bottom-2 right-2 bg-orange-300 text-orange-800 inline-block py-1 px-2 text-xs rounded-full uppercase font-bold tracking-wide group-hover:bg-card group-hover:text-foreground transition duration-300 ease-in-out">Principal</div> : <div></div>}
+            {character?.principal ? <div className="absolute bottom-2 right-2 bg-orange-300 text-orange-800 inline-block py-1 px-2 text-xs rounded-full uppercase font-bold tracking-wide group-hover:bg-card group-hover:text-foreground transition duration-300 ease-in-out">Principal</div> : <div></div>}
 		</div>
 	)
 }
