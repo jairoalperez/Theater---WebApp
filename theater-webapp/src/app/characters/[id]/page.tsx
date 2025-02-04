@@ -8,6 +8,9 @@ import { LoaderPinwheelIcon } from "@/components/ui/loader-pinwheel"
 import { Sleep } from "@/helpers/sleep"
 import { Character } from "@/types/character"
 import CharacterProfile from "@/components/Characters/CharacterProfile"
+import dotenv from "dotenv"
+dotenv.config();
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const CharacterPage: React.FC = () => {
 	const params = useParams()
@@ -21,7 +24,7 @@ const CharacterPage: React.FC = () => {
 		if (id) {
 			let config = {
 				method: "get",
-				url: `https://localhost:7112/api/characters/${id}`,
+				url: `${apiUrl}/characters/${id}`,
 			}
 
 			axios

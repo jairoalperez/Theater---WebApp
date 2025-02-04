@@ -10,6 +10,9 @@ import { Sleep } from "@/helpers/sleep"
 import ActorProfile from "@/components/Actors/ActorProfile"
 import Link from "next/link"
 import ActorCharacterCard from "@/components/Characters/ActorCharacterCard"
+import dotenv from "dotenv"
+dotenv.config();
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const ActorPage: React.FC = () => {
 	const params = useParams()
@@ -23,7 +26,7 @@ const ActorPage: React.FC = () => {
 		if (id) {
 			let config = {
 				method: "get",
-				url: `https://localhost:7112/api/actors/${id}`,
+				url: `${apiUrl}/actors/${id}`,
 			}
 
 			axios

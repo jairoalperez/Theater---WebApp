@@ -10,6 +10,9 @@ import { Sleep } from "@/helpers/sleep"
 import Link from "next/link"
 import PlayProfile from "@/components/Plays/PlayProfile"
 import PlayCharacterCard from "@/components/Characters/PlayCharacterCard"
+import dotenv from "dotenv"
+dotenv.config();
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const PlayPage: React.FC = () => {
 	const params = useParams()
@@ -23,7 +26,7 @@ const PlayPage: React.FC = () => {
 		if (id) {
 			let config = {
 				method: "get",
-				url: `https://localhost:7112/api/plays/${id}`,
+				url: `${apiUrl}/plays/${id}`,
 			}
 
 			axios

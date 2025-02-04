@@ -9,6 +9,9 @@ import { ActorShort } from "@/types/actorShort"
 import Link from "next/link"
 import { LoaderPinwheelIcon } from "@/components/ui/loader-pinwheel"
 import { Sleep } from "@/helpers/sleep"
+import * as dotenv from "dotenv"
+dotenv.config();
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const ActorsList: React.FC = () => {
 	const [actors, setActors] = React.useState<ActorShort[]>([])
@@ -21,8 +24,9 @@ const ActorsList: React.FC = () => {
 	React.useEffect(() => {
 		let config = {
 			method: "get",
-			url: "https://localhost:7112/api/actors/all",
+			url: `${apiUrl}/actors/all`,
 		}
+		console.log(`calling ${apiUrl}`)
 
 		axios
 			.request(config)

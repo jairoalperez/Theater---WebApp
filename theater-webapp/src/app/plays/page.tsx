@@ -8,6 +8,9 @@ import { PlayShort } from "@/types/playShort"
 import Link from "next/link"
 import { LoaderPinwheelIcon } from "@/components/ui/loader-pinwheel"
 import { Sleep } from "@/helpers/sleep"
+import dotenv from "dotenv"
+dotenv.config();
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const PlaysList: React.FC = () => {
 	const [plays, setPlays] = React.useState<PlayShort[]>([])
@@ -17,7 +20,7 @@ const PlaysList: React.FC = () => {
 	React.useEffect(() => {
 		let config = {
 			method: "get",
-			url: "https://localhost:7112/api/plays/all",
+			url: `${apiUrl}/plays/all`,
 		}
 
 		axios
