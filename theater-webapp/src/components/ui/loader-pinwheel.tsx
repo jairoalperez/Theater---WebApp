@@ -36,7 +36,7 @@ const LoaderPinwheelIcon = ({ isAnimating }: { isAnimating?: boolean }) => {
 
   return (
     <div className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center">
-      <svg
+      <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"
         height="28"
@@ -46,18 +46,17 @@ const LoaderPinwheelIcon = ({ isAnimating }: { isAnimating?: boolean }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        animate={controls}
+        variants={gVariants}
+        transition={defaultTransition}
       >
-        <motion.g
-          transition={defaultTransition}
-          variants={gVariants}
-          animate={controls}
-        >
+        <g>
           <path d="M22 12a1 1 0 0 1-10 0 1 1 0 0 0-10 0" />
           <path d="M7 20.7a1 1 0 1 1 5-8.7 1 1 0 1 0 5-8.6" />
           <path d="M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6" />
-        </motion.g>
+        </g>
         <circle cx="12" cy="12" r="10" />
-      </svg>
+      </motion.svg>
     </div>
   );
 };
