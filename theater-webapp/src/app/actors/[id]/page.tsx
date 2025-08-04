@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import axios from "axios"
 import { cn } from "@/lib/utils"
 import { Actor } from "@/types/actor"
@@ -24,7 +24,7 @@ const ActorPage: React.FC = () => {
 
 	React.useEffect(() => {
 		if (id) {
-			let config = {
+			const config = {
 				method: "get",
 				url: `${apiUrl}/actors/${id}`,
 			}

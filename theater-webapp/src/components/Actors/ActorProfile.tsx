@@ -64,10 +64,10 @@ const ActorProfile: React.FC<ActorProfileProps> = ({ actor }) => {
 					</div>
 				</div>
 				<div>
-					{actor.frontImage ? (
+					{actor.fullBodyImage ? (
 						<img
 							className="lg:h-[280px] h-[498px] lg:w-[158px] md:w-[280px] rounded-lg object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
-							src={actor.frontImage}
+							src={actor.fullBodyImage}
 							alt="image"
 						/>
 					) : (
