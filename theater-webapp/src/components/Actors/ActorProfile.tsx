@@ -17,7 +17,7 @@ const ActorProfile: React.FC<ActorProfileProps> = ({ actor }) => {
 				<div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
 					{actor.frontImage ? (
 						<img
-							className="h-[280px] w-[280px] rounded-lg object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
+							className="h-[280px] w-[280px] rounded-lg object-cover object-end group-hover:brightness-105 transition duration-300 ease-in-out"
 							src={actor.frontImage}
 							alt="image"
 						/>
@@ -66,7 +66,7 @@ const ActorProfile: React.FC<ActorProfileProps> = ({ actor }) => {
 				<div>
 					{actor.fullBodyImage ? (
 						<img
-							className="lg:h-[280px] h-[498px] lg:w-[158px] md:w-[280px] rounded-lg object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
+							className="lg:h-[280px] h-[498px] lg:w-[158px] md:w-[280px] rounded-lg object-cover object-end group-hover:brightness-105 transition duration-300 ease-in-out"
 							src={actor.fullBodyImage}
 							alt="image"
 						/>

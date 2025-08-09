@@ -16,7 +16,7 @@ const PlayProfile: React.FC<PlayProfileProps> = ({ play }) => {
 				<div className="w-[280px] items-center justify-center">
 					{play.poster ? (
 						<img
-							className="h-[415px] w-full object-cover object-end brightness-75 group-hover:brightness-105 transition duration-300 ease-in-out"
+							className="h-[415px] w-full object-cover object-end group-hover:brightness-105 transition duration-300 ease-in-out"
 							src={play.poster}
 							alt="image"
 						/>
